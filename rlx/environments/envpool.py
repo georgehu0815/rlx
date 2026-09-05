@@ -1,7 +1,6 @@
 import warnings
 
 import numpy as np
-import envpool
 
 import mlx.core as mx
 
@@ -41,6 +40,8 @@ class EnvPool:
         epsilon=1e-8,
         clip=10.0,
     ):
+        import envpool
+
         with warnings.catch_warnings():
             warnings.filterwarnings("ignore", category=UserWarning, module="gymnasium")
             self.envs = envpool.make(
